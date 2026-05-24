@@ -193,7 +193,7 @@ with app.app_context():
         animal22 = Animal(
             name="Max",
             species="Dog",
-            age="1 year",
+            age="2 months",
             description="Young labrador puppy full of energy and excitement.",
             image_url="static/images/max.jpeg"
         )
@@ -233,15 +233,15 @@ with app.app_context():
         animal27 = Animal(
             name="Charlie",
             species="Dog",
-            age="7 years",
-            description="Older rescue dog with a calm and loving personality.",
+            age="14 years",
+            description="senior rescue husky with a calm and loving personality.",
             image_url="static/images/charlie.jpeg"
         )
 
         animal28 = Animal(
             name="Milo",
             species="Cat",
-            age="2 years",
+            age="2 months",
             description="Playful kitten who loves toys and chasing strings.",
             image_url="static/images/milo.jpeg"
         )
