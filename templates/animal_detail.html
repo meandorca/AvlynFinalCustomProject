@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>{{ animal.name }}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <a href="/">Home</a>
+
+        <a href="/favorites">Favorites</a>
+
+        <a href="/register">Register</a>
+
+        <a href="/login">Login</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+    <div class="detail-card">
+
+        <h1>{{ animal.name }}</h1>
+
+        <img src="/{{ animal.image_url }}">
+
+        <p><strong>Species:</strong> {{ animal.species }}</p>
+
+        <p><strong>Age:</strong> {{ animal.age }}</p>
+
+        <p>{{ animal.description }}</p>
+
+        {% if session.get("user_id") %}
+
+            <a class="button"
+               href="/favorite/{{ animal.id }}">
+                Save to Favorites
+            </a>
+
+        {% else %}
+
+            <button class="button"
+                    onclick="showLoginMessage()">
+                Save to Favorites
+            </button>
+
+        {% endif %}
+
+    </div>
+
+    <script>
+
+    function showLoginMessage() {
+
+        alert(
+            "Please login or click register to create an account and save to favorites."
+        );
+    }
+
+    </script>
+
+</body>
+
+</html>

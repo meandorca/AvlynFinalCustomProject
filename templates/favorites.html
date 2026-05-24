@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Favorites</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <a href="/">Home</a>
+
+        <a href="/favorites">Favorites</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+    <h1>Your Favorite Animals</h1>
+
+    <div class="animal-container">
+
+        {% for animal in animals %}
+
+            <div class="animal-card">
+
+                <h2>{{ animal.name }}</h2>
+
+                <img src="/{{ animal.image_url }}">
+
+                <p><strong>Species:</strong> {{ animal.species }}</p>
+
+                <p><strong>Age:</strong> {{ animal.age }}</p>
+
+                <a class="button remove"
+                   href="/remove_favorite/{{ animal.id }}">
+                    Remove Favorite
+                </a>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+
+</html>
